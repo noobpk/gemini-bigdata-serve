@@ -1,6 +1,5 @@
-from pyspark.sql.window import Window
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import from_json, col, count, avg, window
+from pyspark.sql.functions import from_json, col, count, avg
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType, TimestampType
 from pyspark.sql.functions import col
 
