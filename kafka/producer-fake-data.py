@@ -4,21 +4,29 @@ from time import sleep
 from datetime import datetime
 import random
 import ipaddress
+from faker import Faker
+from faker.providers import internet
+from hashlib import sha256
+
+fake = Faker()
+fake.add_provider(internet)
 
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'], value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 for e in range(100):
     now = datetime.now()
-    key = b'time_series'
+    key = b'prediction_data'
     accuracy_value = random.uniform(0.0, 100.0)
 
-    # Generate a random IPv4 or IPv6 address
-    is_ipv4 = random.choice([True, False])
-    if is_ipv4:
-        ip = ipaddress.IPv4Address(random.randint(0, 2**32 - 1))
-    else:
-        ip = ipaddress.IPv6Address(random.randint(0, 2**128 - 1))
-
-    payload = {'time': now.strftime('%Y-%m-%d %H:%M:%S'), 'ip': str(ip), 'score': accuracy_value}
+    payload = fake.text()
+    hash = sha256(payload.encode('utf-8')).hexdigest()
+    ipaddress = fake.ipv4_private()
+    payload = {
+        'time': now.strftime('%Y-%m-%d %H:%M:%S'),
+        'ipaddress': ipaddress,
+        'payload' : payload,
+        'score': accuracy_value,
+        'hash' : hash,
+        }
     producer.send('gemini-data-streaming', key=key, value=payload)
     print(payload)
     sleep(1)
