@@ -28,7 +28,7 @@ for _ in range(100):
 
     payload = fake.text()
     hash = sha256(payload.encode('utf-8')).hexdigest()
-    ipaddress = fake.ipv4_private()
+    ipaddress = random.choice(ip_list)
     payload = {
         'time': now.strftime('%Y-%m-%d %H:%M:%S'),
         'ipaddress': ipaddress,

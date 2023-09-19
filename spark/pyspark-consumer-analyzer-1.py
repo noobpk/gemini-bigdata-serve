@@ -32,7 +32,7 @@ kafka_params = {
 # Define the schema for your Kafka message value
 schema = StructType([
     StructField("time", TimestampType(), True),
-    StructField("ip", StringType(), True),
+    StructField("ipaddress", StringType(), True),
     StructField("score", DoubleType(), True)
 ])
 
@@ -54,7 +54,7 @@ parsed_stream = kafka_stream.select(
 # Select additional columns for printing
 parsedDf = parsed_stream.select(
     "data.time",
-    "data.ip",
+    "data.ipaddress",
     "data.score",
     "topic",
     "partition",
@@ -64,11 +64,11 @@ parsedDf = parsed_stream.select(
 
 # Count the occurrences of each IP address
 ip_counts = parsedDf \
-    .groupBy("ip").agg(count("*").alias("count"))
+    .groupBy("ipaddress").agg(count("*").alias("count"))
 
 # Calculate the average score for each IP address
 ip_avg_scores = parsedDf \
-    .groupBy("ip").agg(avg("score").alias("avg_score"))
+    .groupBy("ipaddress").agg(avg("score").alias("avg_score"))
 
 # Print the data to the console
 query_ip_counts = ip_counts.writeStream \

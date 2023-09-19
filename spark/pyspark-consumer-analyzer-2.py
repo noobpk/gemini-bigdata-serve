@@ -59,25 +59,25 @@ def analyzer_frame(frame, tmp):
     key_str = key if key else None
     value_str = value if value else None
 
-    if key_str == 'time_series':
+    if key_str == 'prediction_data':
         new_data = json.loads(value_str)
         temp_data.append(new_data)
         df_temp = pd.DataFrame(temp_data)
 
         # Count the occurrences of each IP address in the DataFrame
-        ip_counts = df_temp['ip'].value_counts().reset_index()
-        ip_counts.columns = ['ip', 'count']
+        ip_counts = df_temp['ipaddress'].value_counts().reset_index()
+        ip_counts.columns = ['ipaddress', 'count']
 
         # Calculate the average score for each IP address in the DataFrame
-        ip_avg_scores = df_temp.groupby('ip')['score'].mean().reset_index()
-        ip_avg_scores.columns = ['ip', 'avg_score']
+        ip_avg_scores = df_temp.groupby('ipaddress')['score'].mean().reset_index()
+        ip_avg_scores.columns = ['ipaddress', 'avg_score']
 
         # Convert Pandas DataFrames to PySpark DataFrames
         ip_counts_df = spark.createDataFrame(ip_counts)
         ip_avg_scores_df = spark.createDataFrame(ip_avg_scores)
 
         # Join the two DataFrames on the "ip" column
-        joined_df = ip_counts_df.join(ip_avg_scores_df, "ip", "inner")
+        joined_df = ip_counts_df.join(ip_avg_scores_df, "ipaddress", "inner")
 
         # Print the joined DataFrame
         joined_df.show()
