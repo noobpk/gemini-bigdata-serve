@@ -7,7 +7,7 @@ kafka_topic = 'gemini-data-streaming'
 kafka_bootstrap_servers = ['localhost:9092']
 mongodb_uri = 'mongodb://localhost:27017/'
 mongodb_database = 'geminidb'
-mongodb_collection = 'ip_predict'
+mongodb_collection = 'prediction_data'
 
 # Create a Kafka consumer
 consumer = KafkaConsumer(

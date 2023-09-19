@@ -27,7 +27,7 @@ def update_plot(frame):
                                           frame.offset, frame.key,
                                           frame.value))
 
-    if key == 'time_series':
+    if key == 'prediction_data':
         new_data = json.loads(value)
         save_data.append(new_data)
         temp_data.append(new_data)
@@ -52,7 +52,7 @@ def update_plot(frame):
             annotation.remove()  # Remove previous annotations
         annotations.clear()  # Clear the list
         for idx, row in df_temp.iterrows():
-            annotation = ax.annotate(f"IP: {row['ip']}",
+            annotation = ax.annotate(f"IP: {row['ipaddress']}",
                                      (row['time'], row['score']),
                                      textcoords="offset points",
                                      xytext=(0,10),
