@@ -3,7 +3,6 @@ import json
 from time import sleep
 from datetime import datetime
 import random
-import ipaddress
 from faker import Faker
 from faker.providers import internet
 from hashlib import sha256
