@@ -1,0 +1,71 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Summary Timseries Chart</h5>
+                                        </div>
+                                        <canvas id="summaryChart" width="400" height="100"></canvas>
+                                    </div>
+                                </div>
+                                <!--[ Recent Events ] start-->
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Recent Events</h5>
+                                        </div>
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+                                                <table class="table table-hover" id="eventTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>IP</th>
+                                                            <th>Score</th>
+                                                            <th>Hash</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
