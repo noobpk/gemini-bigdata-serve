@@ -1,9 +1,15 @@
 # gemini-bigdata
 A Big Data processing for gemini-self-protector
 
-# Gemini Component
+## Gemini Component
 
-![system_architecture-2](https://github.com/noobpk/gemini-bigdata-serve/assets/31820707/8e96c318-d1e7-4949-ac5f-a0c7602975ef)
+![image](https://github.com/noobpk/gemini-self-protector/assets/31820707/e825d5ef-90d9-419c-b1d5-76406b770b04)
+
+👉 Plugin : [gemini-self-protector](https://github.com/noobpk/gemini-self-protector)
+
+👉 AI : [gemini-predict-serve](https://github.com/noobpk/gemini-predict-serve)
+
+👉 BigData : [gemini-bigdata-serve](https://github.com/noobpk/gemini-bigdata-serve)
 
 ## Example
 
