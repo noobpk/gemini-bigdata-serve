@@ -1,10 +1,12 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 from kafka import KafkaConsumer
+from flask_cors import CORS
 
 app = Flask(__name__, template_folder='templates', static_folder='templates/static')
+CORS(app)
 app.config['SECRET_KEY'] = 'your_secret_key_here'
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 consumer = KafkaConsumer(
             'gemini-data-streaming',
             bootstrap_servers=['localhost:9092'],
@@ -33,4 +35,4 @@ def kafka_message_consumer():
 
 if __name__ == '__main__':
     socketio.start_background_task(kafka_message_consumer)
-    socketio.run(app, debug=True)
+    socketio.run(app, debug=True, port=5555)

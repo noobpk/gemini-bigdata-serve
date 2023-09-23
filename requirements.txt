@@ -5,3 +5,5 @@ pymongo==4.5.0
 pyspark==3.4.1
 faker
 flask
+flask_cors
+flask-socketio
