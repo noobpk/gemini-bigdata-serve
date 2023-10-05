@@ -1,7 +1,7 @@
 # gemini-bigdata
 A Big Data processing for gemini-self-protector
 
-## Gemini Component
+## Gemini Components
 
 ![image](https://github.com/noobpk/gemini-bigdata/assets/31820707/eaf94053-a2a4-4597-a77d-d3cb8598c8fc)
 
