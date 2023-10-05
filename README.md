@@ -1,5 +1,5 @@
-# gemini-bigdata
-A Big Data processing for gemini-self-protector
+# Gemini-Bigdata (G-BD)
+This is a Gemini-Big Data for gemini-self-protector
 
 ## Gemini Components
 
