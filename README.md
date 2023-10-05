@@ -3,7 +3,8 @@ A Big Data processing for gemini-self-protector
 
 ## Gemini Component
 
-![image](https://github.com/noobpk/gemini-self-protector/assets/31820707/e825d5ef-90d9-419c-b1d5-76406b770b04)
+![image](https://github.com/noobpk/gemini-bigdata/assets/31820707/eaf94053-a2a4-4597-a77d-d3cb8598c8fc)
+
 
 👉 G-SP : [gemini-self-protector](https://github.com/noobpk/gemini-self-protector)
 
