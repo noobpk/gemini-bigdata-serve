@@ -5,11 +5,11 @@ A Big Data processing for gemini-self-protector
 
 ![image](https://github.com/noobpk/gemini-self-protector/assets/31820707/e825d5ef-90d9-419c-b1d5-76406b770b04)
 
-👉 Plugin : [gemini-self-protector](https://github.com/noobpk/gemini-self-protector)
+👉 G-SP : [gemini-self-protector](https://github.com/noobpk/gemini-self-protector)
 
-👉 AI : [gemini-predict-serve](https://github.com/noobpk/gemini-predict-serve)
+👉 G-WVD : [gemini-web-vulnerability-detection](https://github.com/noobpk/gemini-web-vulnerability-detection)
 
-👉 BigData : [gemini-bigdata-serve](https://github.com/noobpk/gemini-bigdata-serve)
+👉 G-BD : [gemini-bigdata](https://github.com/noobpk/gemini-bigdata)
 
 ## Example
 
